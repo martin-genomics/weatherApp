@@ -128,8 +128,8 @@ export default function TabOneScreen() {
               (
                 <TextInput
                     onChangeText={handleTextDebounce}
-                    className=' pl-6 h-10 flex-1 text-white '
-                    placeholder='Search city'  placeholderTextColor={'#e7dcdc'}
+                    className=' pl-6 h-4s flex-1 text-white '
+                    placeholder='Search city'  placeholderTextColor={'white'}
                     />
     
               ):
@@ -170,7 +170,7 @@ export default function TabOneScreen() {
             }
         </View>
         
-        <View className='mx-4 flex justify-around flex-1 mb-2 bg-transparent '>
+        <View className='mx-4 flex justify-around flex-1 mt-10 bg-transparent '>
             <Text className=' text-white text-center text-2xl font-bold'>
               {location?.name}, 
               <Text className=' text-lg font-semibold text-gray-300'>
@@ -184,7 +184,7 @@ export default function TabOneScreen() {
         >
          <Image
           source={require('@/assets/images/pngwing.com.png')}
-          className=' w-52 h-52'
+          className=' w-40 h-40'
          />
         </View>
 
@@ -195,10 +195,10 @@ export default function TabOneScreen() {
            
         </View>
           {/*More info */}
-        <View className=' flex-row justify-between mx-4 bg-transparent mb-10'>
+        <View className=' flex-row justify-between mx-4 bg-transparent '>
             <View className='flex-row space-x-2 items-center bg-transparent'>
               <Image
-                source={require('@/assets/images/pngwing.com.png')}
+                source={require('@/assets/images/windSpeed.png')}
                 className=' w-6 h-6'
               />
               <Text className='text-white font-semibold text-base'>
@@ -208,8 +208,8 @@ export default function TabOneScreen() {
               
             </View>
             <View className='flex-row space-x-2 items-center bg-transparent'>
-              <Image
-                source={require('@/assets/images/pngwing.com.png')}
+            <Image
+                source={require('@/assets/images/humidity.png')}
                 className=' w-6 h-6'
               />
               <Text className='text-white font-semibold text-base'>
@@ -220,12 +220,9 @@ export default function TabOneScreen() {
             </View>
 
             <View className='flex-row space-x-2 items-center bg-transparent'>
-              <Image
-                source={require('@/assets/images/pngwing.com.png')}
-                className=' w-6 h-6'
-              />
+             <Icons.ClockIcon size={20} color={'white'}/>
               <Text className='text-white font-semibold text-base'>
-                6:05AM
+                {new Date().toLocaleTimeString().split(':')[0]+ new Date().toLocaleTimeString().split(':')[2].split(' ')[1] }
               </Text>
 
               
@@ -234,7 +231,7 @@ export default function TabOneScreen() {
         </View>
 
         {/*Other content*/}
-        <View className='space-y-2 bg-transparent mb-10'>
+        <View className='space-y-2 bg-transparent mb-5 '>
             <View className='flex-row items-center mx-5 space-x-2 bg-transparent'>
               <Icons.CalendarIcon size={20} color={'white'}/>
               <Text className='text-white text-base my-5'> Daily Forecast</Text>
